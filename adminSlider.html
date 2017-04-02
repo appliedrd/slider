@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slider</title>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/jQuery-ui-Slider-Pips/1.11.4/jquery-ui-slider-pips.min.css">
+    <link rel="stylesheet" type="text/css" href="slider.css">
+    <link rel="stylesheet" type="text/css" href="adminSlider.css">
+</head>
+<body>
+<label for="hasRange">has a Range?</label>
+<input type="checkbox" name="hasRange" id="hasRange">
+<br/>
+<div id="showMinMax" style="display: none;">
+    <form id="sliderForm" method="post" action="#">
+        <span id="sliderFornErrors"></span>
+        <label for="sliderMin">min:</label>
+        <input type="text" name="sliderMin" id="sliderMin" value="1">
+        <br/>
+        <label for="sliderMax">max:</label>
+        <input type="text" name="sliderMax" id="sliderMax" value="10">
+        <br/>
+        <label for="addSlider">add a Slider?</label>
+        <input type="checkbox" name="addSliderv" id="addSlider">
+        <div id="showSlider" style="display: none;">
+            <fieldset>
+                <label for="sliderInc">increment:</label>
+                <input type="text" name="sliderInc" id="sliderInc" value="1">
+                <br/>
+                <label for="sliderStep">initial:</label>
+                <input type="text" name="initialVal" id="initialVal" value="1">
+                <br/>
+                <br/>
+                <br/>
+                <label for="hasPips">add scale?</label>
+                <input type="checkbox" name="hasPips" id="hasPips">
+                <br/>
+                <div id="addSteps" style="display: none;">
+                    <label for="sliderStep">step:</label>
+                    <input type="text" name="sliderStep" id="sliderStep" value="1">
+                </div>
+                <br/>
+                <button type="submit">Generate slider</button>
+                <br/>
+            </fieldset>
+        </div>
+    </form>
+</div>
+<div id="sliderWidget">
+    <span id="sliderValue"></span>
+    <div class="sliderdiv">
+        <div class="slider">
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-ui-Slider-Pips/1.11.4/jquery-ui-slider-pips.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/additional-methods.min.js"></script>
+<script src="slider.js"></script>
+<script src="adminSlider.js"></script>
+</body>
+</html>
