@@ -79,7 +79,7 @@ $(function () {
         if ($('#sliderForm').valid()) {
             var hasPips = $("input[name=hasPips]").is(':checked');
             genSlider(parseInt($("#sliderMin").val()), parseInt($("#sliderMax").val()), parseInt($("#sliderInc").val()),
-                hasPips, parseInt($("#sliderStep").val()), parseInt($("#initialVal").val()))
+                hasPips, parseInt($("#sliderStep").val()), parseInt($("#initialVal").val()), "#sliderValue")
             $("#sliderFornErrors").text("");
             $( "#sliderWidget" ).show();
         } else {

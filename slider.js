@@ -1,7 +1,7 @@
 /**
  * Created by teddy on 4/2/2017.
  */
-function genSlider(minrange, maxrange, increment, hasPips, step, initialVal) {
+function genSlider(minrange, maxrange, increment, hasPips, step, initialVal,resultId) {
     //$("#params").text("min:" + minrange + " max:" + maxrange + " increment:" + increment + " step:" + step);
     $(".slider")
         .slider({
@@ -11,7 +11,7 @@ function genSlider(minrange, maxrange, increment, hasPips, step, initialVal) {
         })
         .slider("float")
         .on("slidechange", function (e, ui) {
-            $("#sliderValue").text("You selected " + ui.value);
+            $(resultId).val(ui.value);
         });
     if (hasPips) {
         $(".slider")
