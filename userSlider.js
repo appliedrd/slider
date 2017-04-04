@@ -5,6 +5,7 @@
  * Created by teddy on 3/31/2017.
  */
 $(function () {
+    // slider configuration elements set by admin
     var sliderMin = 1;
     var sliderMax = 10;
     var sliderInc = 1;
@@ -13,17 +14,22 @@ $(function () {
     var hasPips = true;
     var sliderStep = 1;
     var initialVal = 5;
+    // result
+    var $inputVal = '#inputVal';
+    // from elements
+    var $sliderValue = $("#sliderValue");
+    var $sliderForm = $("#sliderForm");
 
     if (hasSlider) {
-        $('#inputVal').prop('readonly', true);
-        genSlider(sliderMin, sliderMax, sliderInc, hasPips, sliderStep, initialVal,"#inputVal");
+        $inputVal.prop('readonly', true);
+        genSlider(sliderMin, sliderMax, sliderInc, hasPips, sliderStep, initialVal,$inputVal);
     } else {
-        $("#sliderValue").hide();
+        $sliderValue.hide();
         $.validator.addMethod("inBounds", function (value, element, param) {
-            var inputVal = parseInt($("#inputVal").val());
-            if (inputVal >= sliderMin && inputVal <= sliderMax) return true;
+            var ival = parseInt($inputVal.val());
+            if (ival >= sliderMin && ival <= sliderMax) return true;
         }, "enter a number between " + sliderMin + " and " +  sliderMax);
-        $("#sliderForm").validate({
+        $sliderForm.validate({
             debug: true,
             rules: {
                 "inputVal": {
@@ -34,13 +40,13 @@ $(function () {
             },
             messages: {
                 "inputVal": {
-                    required : "Please, enter a number",
-                    digits: "numbers only"
+                    required : " Please, enter a number",
+                    digits: " enter numbers only"
                 }
             }
         });
-        $("#inputVal").change(function() {
-            $("#inputVal").valid();
+        $inputVal.change(function() {
+            $inputVal.valid();
         });
     }
 });
